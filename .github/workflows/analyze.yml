@@ -1,0 +1,19 @@
+name: Flutter analyze
+on:
+  pull_request:
+    types:
+        - opened
+    branches:
+        - main
+
+jobs:
+  flutter-analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+      - run: flutter pub get
+      - run: flutter analyze
