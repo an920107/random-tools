@@ -19,7 +19,8 @@ class BaseScaffold extends StatelessWidget {
       body: ListView(
         children: [
           ConstrainedBox(
-            constraints: BoxConstraints(minHeight: size.height),
+            constraints:
+                BoxConstraints(minHeight: size.height - kToolbarHeight),
             child: body ?? const SizedBox.shrink(),
           ),
           const BaseFooter(),
