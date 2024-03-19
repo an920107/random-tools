@@ -6,12 +6,8 @@ import 'package:random_tools/view_modle/lot_page_view_model.dart';
 import 'package:random_tools/view_modle/main_view_model.dart';
 import 'package:random_tools/view_modle/number_page_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
-  // 讓網址後方不會出現 `#`
-  setPathUrlStrategy();
-
   WidgetsFlutterBinding.ensureInitialized();
 
   // Go_Router 8.0.0 migration
