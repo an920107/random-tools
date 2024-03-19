@@ -3,16 +3,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:random_tools/view/base/base_scafflod.dart';
-import 'package:random_tools/view_modle/random_number_view_model.dart';
+import 'package:random_tools/view_modle/number_page_view_model.dart';
 
-class RandomNumberPage extends StatefulWidget {
-  const RandomNumberPage({super.key});
+class NumberPage extends StatefulWidget {
+  const NumberPage({super.key});
 
   @override
-  State<RandomNumberPage> createState() => _RandomNumberPageState();
+  State<NumberPage> createState() => _NumberPageState();
 }
 
-class _RandomNumberPageState extends State<RandomNumberPage> {
+class _NumberPageState extends State<NumberPage> {
   final _upperTextController = TextEditingController();
   final _lowerTextController = TextEditingController();
 
@@ -20,9 +20,9 @@ class _RandomNumberPageState extends State<RandomNumberPage> {
   void initState() {
     super.initState();
     _upperTextController.text =
-        context.read<RandomNumberViewModel>().upperLimit.toString();
+        context.read<NumberPageViewModel>().upperLimit.toString();
     _lowerTextController.text =
-        context.read<RandomNumberViewModel>().lowerLimit.toString();
+        context.read<NumberPageViewModel>().lowerLimit.toString();
   }
 
   @override
@@ -33,7 +33,7 @@ class _RandomNumberPageState extends State<RandomNumberPage> {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Consumer<RandomNumberViewModel>(builder: (context, value, child) {
+          Consumer<NumberPageViewModel>(builder: (context, value, child) {
             return Stack(
               children: [
                 IconButton.filledTonal(

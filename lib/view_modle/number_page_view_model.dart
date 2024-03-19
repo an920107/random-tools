@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class RandomNumberViewModel with ChangeNotifier {
+class NumberPageViewModel with ChangeNotifier {
   int? _number;
   String get result => _number?.toString() ?? "?";
 

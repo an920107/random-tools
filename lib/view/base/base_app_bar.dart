@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:random_tools/extension/responosive_extension.dart';
+import 'package:random_tools/router/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -75,11 +77,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: breakpoint.largerThan(MOBILE)
           ? [
               TextButton(
-                onPressed: () {},
+                onPressed: () => context.go(Routes.number.path),
                 child: const Text("亂數"),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () => context.go(Routes.lot.path),
                 child: const Text("抽籤"),
               ),
               TextButton(
